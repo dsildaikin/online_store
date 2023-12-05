@@ -1,10 +1,8 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 import 'package:online_store/APIs/category_api.dart';
 import 'package:online_store/models/category.dart';
-
-import '../APIs/base_api.dart';
+import 'package:online_store/pages/category_grid_page/widgets/category_element.dart';
 
 class CategoryGridPage extends StatefulWidget {
   const CategoryGridPage({super.key});
@@ -14,12 +12,12 @@ class CategoryGridPage extends StatefulWidget {
 }
 
 class _CategoryGridPageState extends State<CategoryGridPage> {
-  late Future<BaseModel> futureCategory;
+  late Future<CategoriesListModel> futureCategory;
 
   @override
   void initState() {
     super.initState();
-    futureCategory = fetchCategory();
+    futureCategory = fetchCategoryList();
   }
 
   @override
@@ -28,7 +26,7 @@ class _CategoryGridPageState extends State<CategoryGridPage> {
       appBar: AppBar(
         title: const Text('Категории товаров'),
       ),
-      body: FutureBuilder<BaseModel>(
+      body: FutureBuilder<CategoriesListModel>(
           future: futureCategory,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
@@ -38,24 +36,7 @@ class _CategoryGridPageState extends State<CategoryGridPage> {
                   ),
                   itemCount: snapshot.data!.data!.categories!.length,
                   itemBuilder: (context, index) {
-                    return Card(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Image.network(
-                            snapshot.data!.data!.categories![index].imageUrl!,
-                            height: 130,
-                            width: 150,
-                            fit: BoxFit.cover,
-                            errorBuilder: (context, object, stackTrace) {
-                              return const Text('Error 404');
-                            },
-                          ),
-                          const SizedBox(height: 20),
-                          Text(snapshot.data!.data!.categories![index].title!),
-                        ],
-                      ),
-                    );
+                    return CategoryElement(index: index, snapshot: snapshot);
                   });
             } else if (snapshot.hasError) {
               return Text('${snapshot.error}');

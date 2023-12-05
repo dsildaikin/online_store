@@ -1,10 +1,10 @@
-class BaseModel {
+class CategoriesListModel {
   Meta? meta;
   Data? data;
 
-  BaseModel({this.meta, this.data});
+  CategoriesListModel({this.meta, this.data});
 
-  BaseModel.fromJson(Map<String, dynamic> json) {
+  CategoriesListModel.fromJson(Map<String, dynamic> json) {
     meta = json['meta'] != null ? Meta.fromJson(json['meta']) : null;
     data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
