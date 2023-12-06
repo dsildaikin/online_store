@@ -8,7 +8,7 @@ class ProductsListModel {
     meta = json['meta'] != null ? Meta.fromJson(json['meta']) : null;
     if (json['data'] != null) {
       data = <Data>[];
-      json['data'].forEach((String key, dynamic v) {
+      json['data'].forEach((dynamic v) {
         data!.add(Data.fromJson(v));
       });
     }

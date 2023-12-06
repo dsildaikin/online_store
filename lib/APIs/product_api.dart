@@ -10,6 +10,6 @@ Future<ProductsListModel> fetchProductList({required int? categoryId}) async {
     return ProductsListModel.fromJson(
         jsonDecode(response.body) as Map<String, dynamic>);
   } else {
-    throw Exception('Failed to load album');
+    throw Exception('Failed to load products');
   }
 }
