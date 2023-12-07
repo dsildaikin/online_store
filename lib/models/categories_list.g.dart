@@ -14,7 +14,7 @@ BaseModelCategories _$BaseModelCategoriesFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$BaseModelCategoriesToJson(
         BaseModelCategories instance) =>
     <String, dynamic>{
-      'data': instance.categoriesList,
+      'data': instance.data,
     };
 
 CategoriesList _$CategoriesListFromJson(Map<String, dynamic> json) =>

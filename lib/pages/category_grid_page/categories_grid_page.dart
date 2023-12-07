@@ -34,7 +34,7 @@ class _CategoryGridPageState extends State<CategoryGridPage> {
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                   ),
-                  itemCount: snapshot.data?.categoriesList.categories.length,
+                  itemCount: snapshot.data?.data.categories.length,
                   itemBuilder: (context, index) {
                     return CategoryElement(index: index, snapshot: snapshot);
                   });

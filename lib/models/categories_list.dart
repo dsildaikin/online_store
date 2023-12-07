@@ -4,9 +4,9 @@ part 'categories_list.g.dart';
 
 @JsonSerializable()
 class BaseModelCategories {
-  BaseModelCategories(this.categoriesList);
+  BaseModelCategories(this.data);
 
-  CategoriesList categoriesList;
+  CategoriesList data;
 
   factory BaseModelCategories.fromJson(Map<String, dynamic> json) =>
       _$BaseModelCategoriesFromJson(json);
