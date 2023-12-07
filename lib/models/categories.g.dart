@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'categories_list.dart';
+part of 'categories.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-BaseModelCategories _$BaseModelCategoriesFromJson(Map<String, dynamic> json) =>
-    BaseModelCategories(
+CategoriesListModel _$CategoriesListModelFromJson(Map<String, dynamic> json) =>
+    CategoriesListModel(
       CategoriesList.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$BaseModelCategoriesToJson(
-        BaseModelCategories instance) =>
+Map<String, dynamic> _$CategoriesListModelToJson(
+        CategoriesListModel instance) =>
     <String, dynamic>{
       'data': instance.data,
     };

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:online_store/APIs/category_api.dart';
-import 'package:online_store/models/categories_list.dart';
+import 'package:online_store/models/categories.dart';
 import 'package:online_store/pages/category_grid_page/widgets/category_element.dart';
 
 class CategoryGridPage extends StatefulWidget {
@@ -12,12 +12,12 @@ class CategoryGridPage extends StatefulWidget {
 }
 
 class _CategoryGridPageState extends State<CategoryGridPage> {
-  late Future<BaseModelCategories> futureCategoriesList;
+  late Future<CategoriesListModel> futureCategoriesListModel;
 
   @override
   void initState() {
     super.initState();
-    futureCategoriesList = fetchCategoriesList();
+    futureCategoriesListModel = fetchCategoriesListModel();
   }
 
   @override
@@ -26,8 +26,8 @@ class _CategoryGridPageState extends State<CategoryGridPage> {
       appBar: AppBar(
         title: const Text('Категории товаров'),
       ),
-      body: FutureBuilder<BaseModelCategories>(
-          future: futureCategoriesList,
+      body: FutureBuilder<CategoriesListModel>(
+          future: futureCategoriesListModel,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return GridView.builder(

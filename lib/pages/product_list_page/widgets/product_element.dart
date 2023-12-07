@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ProductItem extends StatelessWidget {
+class ProductElement extends StatelessWidget {
   final AsyncSnapshot snapshot;
   final int index;
 
-  const ProductItem({
+  const ProductElement({
     Key? key,
     required this.snapshot,
     required this.index,

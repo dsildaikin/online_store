@@ -1,7 +1,7 @@
 // import 'package:flutter/material.dart';
 // import 'package:online_store/APIs/product_api.dart';
 // import 'package:online_store/models/product.dart';
-// import 'package:online_store/pages/widgets/product_item.dart';
+// import 'package:online_store/pages/widgets/product_element.dart';
 //
 // class ProductsListPage extends StatefulWidget {
 //   const ProductsListPage({super.key});

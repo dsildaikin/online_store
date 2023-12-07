@@ -1,17 +1,17 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'categories_list.g.dart';
+part 'categories.g.dart';
 
 @JsonSerializable()
-class BaseModelCategories {
-  BaseModelCategories(this.data);
+class CategoriesListModel {
+  CategoriesListModel(this.data);
 
   CategoriesList data;
 
-  factory BaseModelCategories.fromJson(Map<String, dynamic> json) =>
-      _$BaseModelCategoriesFromJson(json);
+  factory CategoriesListModel.fromJson(Map<String, dynamic> json) =>
+      _$CategoriesListModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$BaseModelCategoriesToJson(this);
+  Map<String, dynamic> toJson() => _$CategoriesListModelToJson(this);
 }
 
 @JsonSerializable()
