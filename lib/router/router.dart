@@ -3,5 +3,5 @@ import 'package:online_store/pages/products_list_page.dart';
 
 final routes = {
   '/': (context) => const CategoryGridPage(),
-  '/product': (context) => const ProductsListPage(),
+  // '/product': (context) => const ProductsListPage(),
 };

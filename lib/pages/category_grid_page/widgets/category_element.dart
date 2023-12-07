@@ -13,8 +13,8 @@ class CategoryElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<dynamic> arguments = [
-      snapshot.data!.data!.categories![index].title!,
-      snapshot.data!.data!.categories![index].categoryId!,
+      snapshot.data?.categoriesList.categories[index].title,
+      snapshot.data?.categoriesList.categories[index].categoryId,
     ];
     return InkWell(
       onTap: () {
@@ -28,7 +28,7 @@ class CategoryElement extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Image.network(
-              snapshot.data!.data!.categories![index].imageUrl!,
+              snapshot.data?.categoriesList.categories[index].imageUrl,
               height: 130,
               width: 150,
               fit: BoxFit.cover,
@@ -37,7 +37,9 @@ class CategoryElement extends StatelessWidget {
               },
             ),
             const SizedBox(height: 20),
-            Text(snapshot.data!.data!.categories![index].title!),
+            Text(
+              snapshot.data?.categoriesList.categories[index].title,
+            ),
           ],
         ),
       ),
