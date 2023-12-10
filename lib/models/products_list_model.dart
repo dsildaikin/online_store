@@ -26,9 +26,9 @@ class Product {
 
   int productId;
   String title;
-  String productDescription;
-  String price;
-  String imageUrl;
+  String? productDescription;
+  int price;
+  String? imageUrl;
 
   factory Product.fromJson(Map<String, dynamic> json) =>
       _$ProductFromJson(json);
