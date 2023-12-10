@@ -57,7 +57,7 @@ class _CategoryGridPageState extends State<CategoryGridPage> {
                               width: 150,
                               fit: BoxFit.cover,
                               errorBuilder: (context, object, stackTrace) {
-                                return const Text('Image not found');
+                                return const Text('No image');
                               },
                             ),
                             const SizedBox(height: 20),

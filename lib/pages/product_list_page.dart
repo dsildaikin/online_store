@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:online_store/APIs/product_api.dart';
 import 'package:online_store/models/categories_list_model.dart';
 import 'package:online_store/models/products_list_model.dart';
+import 'package:online_store/pages/product_details_page.dart';
 
 class ProductListPage extends StatefulWidget {
   const ProductListPage({super.key, required this.category});
@@ -35,8 +36,30 @@ class _ProductListPageState extends State<ProductListPage> {
               return ListView.builder(
                   itemCount: snapshot.data!.data.length,
                   itemBuilder: (context, index) {
-                    return ListTile(
-                      title: Text(snapshot.data!.data[index].title),
+                    return Card(
+                      child: ListTile(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProductDetails(
+                                product: snapshot.data!.data[index],
+                                productCategoryName: widget.category.title,
+                              ),
+                            ),
+                          );
+                        },
+                        title: Text(snapshot.data!.data[index].title),
+                        subtitle:
+                            Text('Цена: ${snapshot.data!.data[index].price}'),
+                        leading: Image.network(
+                          snapshot.data!.data[index].imageUrl.toString(),
+                          errorBuilder: (context, object, stackTrace) {
+                            return const Text('No image');
+                            //TODO сделать картинку ошибки
+                          },
+                        ),
+                      ),
                     );
                   });
             } else if (snapshot.hasError) {
