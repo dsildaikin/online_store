@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'categories.g.dart';
+part 'categories_list_model.g.dart';
 
 @JsonSerializable()
 class CategoriesListModel {
