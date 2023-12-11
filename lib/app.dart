@@ -6,9 +6,14 @@ class OnlineStoreApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Online Store',
-      home: CategoryGridPage(),
+      home: const CategoryGridPage(),
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          color: Colors.blue,
+        ),
+      ),
     );
   }
 }
