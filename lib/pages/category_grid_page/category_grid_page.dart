@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:online_store/APIs/category_api.dart';
+import 'package:online_store/api/category_api.dart';
 import 'package:online_store/models/categories_list_model/categories_list_model.dart';
 import 'package:online_store/pages/category_grid_page/category_item.dart';
 import 'package:online_store/pages/product_list_page/product_list_page.dart';

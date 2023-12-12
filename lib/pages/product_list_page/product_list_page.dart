@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:online_store/APIs/product_api.dart';
+import 'package:online_store/api/product_api.dart';
 import 'package:online_store/models/categories_list_model/categories_list_model.dart';
 import 'package:online_store/models/products_list_model/products_list_model.dart';
 import 'package:online_store/pages/product_list_page/product_item.dart';
