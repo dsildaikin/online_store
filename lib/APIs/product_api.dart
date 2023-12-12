@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:online_store/APIs/base_api.dart';
 import 'package:http/http.dart' as http;
-import 'package:online_store/models/products_list_model.dart';
+import 'package:online_store/models/products_list_model/products_list_model.dart';
 
 Future<ProductsListModel> fetchProductsListModel(int categoryId) async {
   final url =

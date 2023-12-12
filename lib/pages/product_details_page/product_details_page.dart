@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:online_store/models/products_list_model.dart';
+import 'package:online_store/models/products_list_model/products_list_model.dart';
 
 class ProductDetails extends StatelessWidget {
   const ProductDetails({
     super.key,
     required this.product,
-    required this.productCategoryName,
+    required this.categoryName,
   });
 
   final Product product;
-  final String productCategoryName;
+  final String categoryName;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class ProductDetails extends StatelessWidget {
                 return const Text('No image');
               },
             ),
-            Text('Категория продукта: $productCategoryName'),
+            Text('Категория продукта: $categoryName'),
             const Text('Описание продукта'),
             Text(product.productDescription ?? 'description is not found'),
           ],

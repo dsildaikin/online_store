@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:online_store/pages/category_grid_page.dart';
+import 'package:online_store/pages/category_grid_page/category_grid_page.dart';
 
 class OnlineStoreApp extends StatelessWidget {
   const OnlineStoreApp({super.key});

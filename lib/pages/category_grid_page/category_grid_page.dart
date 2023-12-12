@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:online_store/APIs/category_api.dart';
-import 'package:online_store/models/categories_list_model.dart';
-import 'package:online_store/pages/product_list_page.dart';
+import 'package:online_store/models/categories_list_model/categories_list_model.dart';
+import 'package:online_store/pages/category_grid_page/category_item.dart';
+import 'package:online_store/pages/product_list_page/product_list_page.dart';
 
 class CategoryGridPage extends StatefulWidget {
   const CategoryGridPage({super.key});
@@ -47,25 +48,8 @@ class _CategoryGridPageState extends State<CategoryGridPage> {
                           ),
                         );
                       },
-                      child: Card(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Image.network(
-                              snapshot.data!.data.categories[index].imageUrl,
-                              height: 130,
-                              width: 150,
-                              fit: BoxFit.cover,
-                              errorBuilder: (context, object, stackTrace) {
-                                return const Text('No image');
-                              },
-                            ),
-                            const SizedBox(height: 20),
-                            Text(
-                              snapshot.data!.data.categories[index].title,
-                            ),
-                          ],
-                        ),
+                      child: CategoryItem(
+                        category: snapshot.data!.data.categories[index],
                       ),
                     );
                   });
