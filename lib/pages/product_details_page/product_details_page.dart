@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_store/models/products_list_model/products_list_model.dart';
+import 'package:online_store/pages/utils/custom_image.dart';
 
 class ProductDetails extends StatelessWidget {
   const ProductDetails({
@@ -18,24 +19,32 @@ class ProductDetails extends StatelessWidget {
         title: Text(product.title),
         centerTitle: true,
       ),
-      body: Container(
-        alignment: Alignment.center,
-        margin: const EdgeInsets.only(top: 20.0),
-        child: Column(
-          children: [
-            Image.network(
-              product.imageUrl.toString(),
-              width: 200,
-              height: 200,
-              fit: BoxFit.cover,
-              errorBuilder: (context, object, stackTrace) {
-                return const Text('No image');
-              },
-            ),
-            Text('Категория продукта: $categoryName'),
-            const Text('Описание продукта'),
-            Text(product.productDescription ?? 'description is not found'),
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          alignment: Alignment.center,
+          margin: const EdgeInsets.all(12.0),
+          child: Column(
+            children: [
+              CustomImage(imageUrl: product.imageUrl.toString()),
+              const SizedBox(height: 35),
+              Text(
+                'Категория продукта: $categoryName',
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              const SizedBox(height: 15),
+              Text(
+                'Описание продукта:',
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              Text(
+                product.productDescription != null &&
+                        product.productDescription != ''
+                    ? product.productDescription!
+                    : 'Не найдено',
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ],
+          ),
         ),
       ),
     );
