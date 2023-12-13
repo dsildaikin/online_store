@@ -19,8 +19,9 @@ class _ProductListPageState extends State<ProductListPage> {
   @override
   void initState() {
     super.initState();
-    futureProductsListModel =
-        fetchProductsListModel(widget.category.categoryId);
+    futureProductsListModel = ProductApi.fetchProductsListModel(
+      widget.category.categoryId.toString(),
+    );
   }
 
   @override

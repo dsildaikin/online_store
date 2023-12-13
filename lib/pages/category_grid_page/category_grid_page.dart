@@ -18,7 +18,7 @@ class _CategoryGridPageState extends State<CategoryGridPage> {
   @override
   void initState() {
     super.initState();
-    futureCategoriesListModel = fetchCategoriesListModel();
+    futureCategoriesListModel = CategoryApi.fetchCategoriesListModel();
   }
 
   @override
